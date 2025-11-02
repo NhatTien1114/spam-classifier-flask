@@ -132,3 +132,4 @@ Dự án này được phát triển cho mục đích **học tập** và **nghi
 > 👨‍💻 Tác giả: **Nhật Tiến**  
 > 📅 Năm: 2025  
 > 🌐 Repository: [https://github.com/NhatTien1114/spam-classifier-flask](https://github.com/NhatTien1114/spam-classifier-flask)
+trình duyệt của bạn và truy cập: http://127.0.0.1:5000
