@@ -9,7 +9,6 @@ Mô hình được huấn luyện bằng Logistic Regression trên bộ dữ li�
 1. Tải code về (Clone)
 
 git clone <https://github.com/NhatTien1114/spam-classifier-flask>
-cd <Phân loại mail rác>
 
 
 2. Tạo môi trường ảo
@@ -51,5 +50,6 @@ python app_fixed.py
 
 
 6. Mở ứng dụng
+
 
 Mở trình duyệt của bạn và truy cập: http://127.0.0.1:5000
