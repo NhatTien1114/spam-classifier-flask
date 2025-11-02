@@ -3,22 +3,14 @@ from flask import Flask, render_template, request
 import pickle
 import sys
 import os
-import re  # Import thư viện re
+import re  
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
-# --- Cài đặt ứng dụng Flask ---
-#
-# SỬA LỖI CẤU TRÚC FILE:
-# Vì thư mục 'templates' của bạn đã nằm ngang hàng với 'app.py'
-# chúng ta có thể xóa 'template_folder' và Flask sẽ tự động tìm thấy nó.
-#
 app = Flask(__name__)
 
-# --- Khởi tạo các công cụ tiền xử lý (Giống hệt Notebook) ---
 try:
-    # Đảm bảo bạn đã tải 'stopwords'
     stop_words = set(stopwords.words('english'))
 except LookupError:
     print("Đang tải NLTK stopwords...")
@@ -47,23 +39,13 @@ except Exception as e:
     sys.exit(1)
 
 
-# --- HÀM TIỀN XỬ LÝ VĂN BẢN (ĐÃ SỬA LỖI) ---
 def preprocess_text(text):
     """
     Hàm này làm sạch văn bản thô từ web
     để nó khớp 100% với dữ liệu đã huấn luyện.
     """
-    # 1. Chuyển chữ thường
     text = text.lower()
-    
-    # 2. (SỬA LỖI) Xóa các ký tự không phải chữ
-    #
-    # LỖI CŨ CỦA BẠN: re.sub(r'[^a-z\s]', '', text)
-    # Vấn đề: Nó biến "http://fake.com" thành "httpfakecom" (một từ vô nghĩa).
-    #
-    # CÁCH SỬA: Thay thế các ký tự không phải chữ bằng MỘT KHOẢNG TRẮNG.
-    # "http://fake.com" sẽ trở thành "http  fake com"
-    #
+ 
     text = re.sub(r'[^a-z]', ' ', text) # Thay thế tất cả ký tự không phải chữ cái bằng khoảng trắng
     
     # 3. Tách từ
@@ -82,7 +64,6 @@ def preprocess_text(text):
 def home():
     return render_template('index.html', prediction_text=None, email='')
 
-# --- Route dự đoán (ĐÃ SỬA LỖI) ---
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
