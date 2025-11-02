@@ -1,0 +1,18 @@
+Bỏ qua các file môi trường Python
+
+pycache/
+*.pyc
+venv/
+.env
+
+Bỏ qua các file checkpoint của Jupyter
+
+.ipynb_checkpoints/
+
+Bỏ qua các file mô hình và vectorizer đã huấn luyện
+
+Chúng ta sẽ không đẩy các file .pkl lên GitHub
+
+Người dùng sẽ phải tự chạy notebook để tạo ra chúng.
+
+/model/
