@@ -5,7 +5,7 @@
 Mô hình được huấn luyện bằng **Logistic Regression** trên bộ dữ liệu `spam.csv`, với các kỹ thuật tiền xử lý **NLTK** và **cân bằng dữ liệu SMOTE**.
 
 
-### 6️⃣ Mở ứng dụng trên trình duyệt
+### Mở ứng dụng trên trình duyệt
 
 Truy cập địa chỉ:
 
@@ -54,4 +54,5 @@ Nhập thử email ví dụ:
 
 --- 
 > 🌐 Repository: [https://github.com/NhatTien1114/spam-classifier-flask](https://github.com/NhatTien1114/spam-classifier-flask)
-trình duyệt của bạn và truy cập: http://127.0.0.1:5000
+
+> trình duyệt của bạn và truy cập: http://127.0.0.1:5000
